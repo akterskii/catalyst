@@ -2,7 +2,7 @@ from typing import Dict, Tuple
 
 import numpy as np
 import multiprocessing as mp
-from gym import spaces
+import  gym
 from torch.utils.data import Dataset
 
 from catalyst import utils
@@ -24,7 +24,7 @@ def _handle_array(array: np.ndarray):
 
 def get_buffer(
     capacity: int,
-    space: spaces.Space = None,
+    space: gym.Space = None,
     shape: Tuple = None,
     dtype=None,
     mode: str = "numpy",
@@ -93,7 +93,7 @@ class BufferWrapper:
     def __init__(
         self,
         capacity: int,
-        space: spaces.Space = None,
+        space: gym.Space = None,
         shape: Tuple = None,
         dtype=None,
         name: str = None,
@@ -165,8 +165,8 @@ class BufferWrapper:
 class OffpolicyReplayBuffer(Dataset):
     def __init__(
         self,
-        observation_space: spaces.Space,
-        action_space: spaces.Space,
+        observation_space: gym.Space,
+        action_space: gym.Space,
         capacity: int = int(1e6),
         capacity_mult: int = 2,
         n_step: int = 1,
@@ -353,8 +353,8 @@ class OffpolicyReplayBuffer(Dataset):
 class OnpolicyRolloutBuffer(Dataset):
     def __init__(
         self,
-        state_space: spaces.Space,
-        action_space: spaces.Space,
+        state_space: gym.Space,
+        action_space: gym.Space,
         capacity=int(1e6),
         **rollout_spec
     ):
