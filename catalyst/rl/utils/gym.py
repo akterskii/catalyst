@@ -1,9 +1,9 @@
 import numpy as np
 from collections import OrderedDict
-from gym import spaces
+import gym
 
 
-def extend_space(space, history_len) -> spaces.Space:
+def extend_space(space, history_len) -> gym.Space:
     def _extend_to_history_len(np_array):
         return np.concatenate(
             history_len * [np.expand_dims(np_array, 0)], axis=0
