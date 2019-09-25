@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABC
-from gym.spaces import Space, Discrete
+from  gym import Space, Discrete
 
 
 class EnvironmentSpec(ABC):
@@ -19,7 +19,7 @@ class EnvironmentSpec(ABC):
 
     @property
     @abstractmethod
-    def observation_space(self) -> Space:
+    def observation_space(self) -> gySpace:
         pass
 
     @property
