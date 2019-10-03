@@ -20,7 +20,7 @@ class EnvironmentSpec(ABC):
 
     @property
     @abstractmethod
-    def observation_space(self) -> gySpace:
+    def observation_space(self) -> Space:
         pass
 
     @property
