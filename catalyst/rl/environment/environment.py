@@ -67,15 +67,15 @@ class EnvironmentWrapper(EnvironmentSpec):
         return self._history_len
 
     @property
-    def observation_space(self) -> spaces.space.Space:
+    def observation_space(self) -> gym.Space:
         return self._observation_space
 
     @property
-    def state_space(self) -> spaces.space.Space:
+    def state_space(self) -> gym.Space:
         return self._state_space
 
     @property
-    def action_space(self) -> spaces.space.Space:
+    def action_space(self) -> gym.Space:
         return self._action_space
 
     def _prepare_spaces(self):
