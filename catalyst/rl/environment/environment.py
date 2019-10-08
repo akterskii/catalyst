@@ -5,6 +5,7 @@ import time
 import random
 
 import numpy as np
+import gym
 from gym import spaces
 
 from catalyst.rl.core import EnvironmentSpec
