@@ -1,7 +1,7 @@
 import numpy as np
 from collections import OrderedDict
 import gym
-
+import gym.spaces as spaces
 
 def extend_space(space, history_len) -> gym.Space:
     def _extend_to_history_len(np_array):
