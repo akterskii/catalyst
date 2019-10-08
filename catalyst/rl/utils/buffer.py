@@ -6,7 +6,7 @@ import  gym
 from torch.utils.data import Dataset
 
 from catalyst import utils
-
+import gym.spaces as spaces
 
 def _handle_array(array: np.ndarray):
     array = utils.structed2dict(array)
